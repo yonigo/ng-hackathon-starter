@@ -1,5 +1,6 @@
+/// <reference src="typings/tsd.d.ts">
 import {NgFor, Component, View, bootstrap} from "angular2/angular2";
-import {Http} from "http/http";
+import {Http} from "angular2/http";
 
 const REPOS = `https://api.github.com/users/angular/repos`;
 
@@ -15,7 +16,7 @@ const REPOS = `https://api.github.com/users/angular/repos`;
 `
 })
 export default class RepoList {
-    repos:any[] = [];
+    repos: any[] = [];
 
     constructor(http:Http) {
         //waiting for RxNext to release before API stabilizes...

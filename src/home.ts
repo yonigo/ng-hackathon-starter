@@ -1,4 +1,5 @@
-//http://victorsavkin.com/post/119943127151/angular-2-template-syntax
+/// <reference src="typings/tsd.d.ts">
+
 import {Component, View, bootstrap} from "angular2/angular2";
 import {FORM_DIRECTIVES} from 'angular2/forms'
 

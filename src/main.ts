@@ -1,5 +1,7 @@
+/// <reference src="typings/tsd.d.ts">
+
 import {CORE_DIRECTIVES, Component, View, bootstrap} from "angular2/angular2";
-import {HTTP_BINDINGS} from "http/http";
+import {HTTP_BINDINGS} from "angular2/http";
 import {ROUTER_BINDINGS, HashLocationStrategy, LocationStrategy, Router, RouterLink, RouteConfig, RouterOutlet} from "angular2/router";
 import {bind, Injectable} from "angular2/di";
 
