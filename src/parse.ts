@@ -9,13 +9,13 @@ export class ParseServise {
 
 	getAddresses() {
 		var _this = this;
-		var promise = new Promise( function(resolve, reject) {
+		var promise = new Promise(function (resolve, reject) {
 				var query = new Parse.Query(_this.LocationObject);
 				query.find({
-					success: function(results) {
+					success: function (results) {
 						resolve(results);
 					},
-					error: function(error) {
+					error: function (error) {
 						reject(error);
 					}
 				});
