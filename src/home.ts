@@ -13,6 +13,7 @@ import {ParseServise} from './parse'
     template:`
         <div>Enter Your address</div>
         <input placeholder="Enter your address" [(ng-model)]="address">
+
         <div *ng-for="#location of locations">{{location.attributes.home}}</div>
     `
 })
@@ -25,6 +26,5 @@ export default class Home {
     address:string = "";
     locations:any[] = [];
 
-    
 
 }
