@@ -11,10 +11,19 @@ import {ParseServise} from './parse'
     directives: [NgFor, FORM_DIRECTIVES],
     //I could've just onButtonClick(name), but wanted to show #input syntax
     template:`
-        <div>Enter Your address</div>
-        <input placeholder="Enter your address" [(ng-model)]="address">
-        <button (click)="addAddress()">Add</button>
-        <div *ng-for="#location of locations">{{location.attributes.home}}</div>
+        <form class="container">
+            <div>Enter Your address</div>
+            <div class="input-group">
+                <input placeholder="Enter your address" [(ng-model)]="address" class="form-control">
+               <span class="input-group-btn">
+                    <button (click)="addAddress()" class="btn btn-success">Add</button>
+                </span>
+            </div>
+            <br>
+            <ul class="list-group">
+                <li class="list-group-item" *ng-for="#location of locations">{{location.attributes.home}}</li>
+            </ul>
+        </form>
     `
 })
 export default class Home {

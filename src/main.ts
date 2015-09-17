@@ -11,8 +11,7 @@ import Home from "./home";
 import RepoList from "./repo-list";
 
 @RouteConfig([
-    {path: '/', as: "home", component:Home},
-    {path: '/repo-list', as: "repo-list", component:RepoList},
+    {path: '/', as: "home", component:Home}
 ])
 @Component({
     selector: "app"
@@ -20,10 +19,7 @@ import RepoList from "./repo-list";
 @View({
     directives: [CORE_DIRECTIVES, RouterOutlet, RouterLink],
     template: `
-        <nav>
-            <a [router-link]="['/home']">Home</a>
-            <a [router-link]="['/repo-list']">Repo List</a>
-        </nav>
+        <br><br>
         <main>
             <router-outlet></router-outlet>
         </main>
