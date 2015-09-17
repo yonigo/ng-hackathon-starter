@@ -8,16 +8,20 @@ export class ParseServise {
 	}
 
 	getAddresses() {
-		var promise = new Promise();
-		var query = new Parse.Query(this.LocationObject);
-		query.find({
-			success: function(results) {
-				promise.resolve(results);
-			},
-			error: function(error) {
-				promise.reject(error);
+		var _this = this;
+		var promise = new Promise( function(resolve, reject) {
+				var query = new Parse.Query(_this.LocationObject);
+				query.find({
+					success: function(results) {
+						resolve(results);
+					},
+					error: function(error) {
+						reject(error);
+					}
+				});
 			}
-		});
+		);
+
 		return promise;
 	}
 

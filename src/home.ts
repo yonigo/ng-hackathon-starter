@@ -18,11 +18,11 @@ import {ParseServise} from './parse'
 })
 export default class Home {
 
-    constructor(@Inject(ParseServise) parse: ParseServise) {
-        parse.getAddresses().then(locations=>this.locations =locations)
+    constructor(parse: ParseServise) {
+        parse.getAddresses().then(locations =>this.locations =locations)
     }
     name:string = "ng-hackathon";
-    address:String = "";
-    locations:any;
+    address:string = "";
+    locations:any[] = [];
 
 }
