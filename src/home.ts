@@ -1,23 +1,28 @@
 /// <reference src="typings/tsd.d.ts">
 
-import {Component, View, bootstrap} from "angular2/angular2";
+import {NgFor, Component, View, bootstrap} from "angular2/angular2";
 import {FORM_DIRECTIVES} from 'angular2/forms'
+import {ParseServise} from './parse'
 
 @Component({
     selector: "home"
 })
 @View({
-    directives: [FORM_DIRECTIVES],
+    directives: [NgFor, FORM_DIRECTIVES],
     //I could've just onButtonClick(name), but wanted to show #input syntax
     template:`
-        <div>Welcome to the <button (click)="onButtonClick(input.value)">{{name}}</button></div>
-        <input #input [(ng-model)]="name">
+        <div>Enter Your address</div>
+        <input placeholder="Enter your address" [(ng-model)]="address">
+        <div *ng-for="#location of locations">{{location}}</div>
     `
 })
 export default class Home {
-    name:string = "ng-hackathon";
 
-    onButtonClick(value){
-        alert(value);
+    constructor(@Inject(ParseServise) parse: ParseServise) {
+        parse.getAddresses().then(locations=>this.locations =locations)
     }
+    name:string = "ng-hackathon";
+    address:String = "";
+    locations:any;
+
 }
