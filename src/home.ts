@@ -20,9 +20,10 @@ import {GoogleSearchServise} from './google-map-search';
 }
 </style>
     <google-map latitude="37.77493" longitude="-122.41942" fit-to-markers>
-<google-map-marker latitude="37.779" longitude="-122.3892"
+<google-map-marker latitude="32.074314" longitude="34.770642"
 draggable="true" title="Go Giants!"></google-map-marker>
-    <google-map-marker latitude="37.777" longitude="-122.38911"></google-map-marker>
+    <google-map-marker latitude="32.0812993" longitude="34.770642"></google-map-marker>
+    <google-map-marker latitude="32.089473" longitude="34.780812"></google-map-marker>
     </google-map>
             <div>Enter Your address</div>
             <div class="input-group">
