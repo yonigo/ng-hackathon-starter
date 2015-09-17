@@ -26,15 +26,17 @@ export class ParseServise {
 	}
 
 	setAddress(Address:String) {
-		var promise = new Promise();
-		var myLocation = new this.LocationObject();
-		myLocation.save({home: 'Dizengoff 24'}, {
-			success: function(object) {
-				promise.resolve(object);
-			},
-			error: function(model, error) {
-				promise.reject(error);
-			}
+		var _this = this;
+		var promise = new Promise(function(resolve, reject) {
+			var myLocation = new _this.LocationObject();
+			myLocation.save({home: Address}, {
+				success: function(object) {
+					resolve(object);
+				},
+				error: function(model, error) {
+					reject(error);
+				}
+			});
 		});
 		return promise;
 	}
