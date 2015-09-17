@@ -13,18 +13,25 @@ import {ParseServise} from './parse'
     template:`
         <div>Enter Your address</div>
         <input placeholder="Enter your address" [(ng-model)]="address">
-
+        <button (click)="addAddress()">Add</button>
         <div *ng-for="#location of locations">{{location.attributes.home}}</div>
     `
 })
 export default class Home {
 
-    constructor(parse: ParseServise) {
+    constructor(private parse: ParseServise) {
         parse.getAddresses().then(locations =>this.locations =locations)
     }
     name:string = "ng-hackathon";
     address:string = "";
     locations:any[] = [];
 
+    addAddress() {
+        var _this = this;
+        this.parse.setAddress(_this.address).then(function(newAddress) {
+            _this.locations.push(newAddress);
+            _this.address = "";
+        });
+    }
 
 }
